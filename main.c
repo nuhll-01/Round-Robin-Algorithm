@@ -1,7 +1,7 @@
 #include "RRL.h"
 
 int main() {
-        
+
     // Number of processes
     int PRCS = 0;
 
@@ -29,5 +29,12 @@ int main() {
     printf("%s", "Enter the time slice: ");
     scanf("%d", &TS);
 
+    // Initialize the processes
+    Process processes[PRCS];
+    initialize_processes(processes, PRCS, BT, AT);
+
+    // Initialize Round-Robin algorithm
+    round_robin_scheduler(processes, PRCS, TS);
+    
     return 0;
 }
